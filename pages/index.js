@@ -18,7 +18,7 @@ export default function Home() {
       className="d-block w-100"
       src="https://homepages.cae.wisc.edu/~ece533/images/cat.png"
       alt="First slide"
-      height="600px"
+      height="400px"
       width="300px"
     />
     <Carousel.Caption>
@@ -31,7 +31,7 @@ export default function Home() {
       className="d-block w-100"
       src="https://homepages.cae.wisc.edu/~ece533/images/monarch.png"
       alt="Third slide"
-      height="600px"
+      height="400px"
       width="300px"
     />
 
@@ -45,7 +45,7 @@ export default function Home() {
       className="d-block w-100"
       src="https://homepages.cae.wisc.edu/~ece533/images/baboon.png"
       alt="Third slide"
-      height="600px"
+      height="400px"
       width="300px"
     />
 
@@ -56,6 +56,7 @@ export default function Home() {
   </Carousel.Item>
 </Carousel>
 </div>
+
 </Layout>
 
 </div>

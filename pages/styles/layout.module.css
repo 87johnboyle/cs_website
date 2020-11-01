@@ -1,11 +1,18 @@
-/* .container {
+.container {
+   position: relative;
+   min-height: 100vh;
+   /*  
+  
     max-width: 46rem;
     padding: 0 1rem;
     margin: 3rem auto 6rem;
     background-color: lightGrey;
+    
+    
+*/
     border-radius: 1rem;
     animation-name: example;
-  animation-duration: 1s;
+    animation-duration: 1s;
   } 
 
   @keyframes example {
@@ -14,4 +21,4 @@
     50%  {opacity:0.6;}
     75%  {opacity:0.8;}
     100% {opacity:1;}
-  } */
+  } 
