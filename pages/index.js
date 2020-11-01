@@ -3,21 +3,61 @@ import {useEffect, useState} from 'react';
 import Link from 'next/link';
 import Layout from './components/layout'
 import NavBar from './components/navbar'
-
+import { Carousel } from 'react-bootstrap'
+import styles from './styles/index.module.css'
 export default function Home() {
   const[data, setData]=useState('i am data from hook useState')
   return (
 <div>
-<Head>
-  <title>Code Scramblers</title>
-</Head>
-    <NavBar></NavBar>
-    <Layout>
+{/* Everything will be sitting inside Layout as this will bring top navbar and footer later on.  */}
+<Layout> 
+<div className={styles.indexCarousel}>
+<Carousel >
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://homepages.cae.wisc.edu/~ece533/images/cat.png"
+      alt="First slide"
+      height="600px"
+      width="300px"
+    />
+    <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://homepages.cae.wisc.edu/~ece533/images/monarch.png"
+      alt="Third slide"
+      height="600px"
+      width="300px"
+    />
 
-<p>{data}</p>
+    <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://homepages.cae.wisc.edu/~ece533/images/baboon.png"
+      alt="Third slide"
+      height="600px"
+      width="300px"
+    />
 
+    <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
+</div>
+</Layout>
 
-    </Layout>
 </div>
 )
 }
