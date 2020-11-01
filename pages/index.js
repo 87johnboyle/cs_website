@@ -1,9 +1,31 @@
 import Head from 'next/head'
+import {useEffect, useState} from 'react';
+import Link from 'next/link';
+import Layout from './components/layout'
+import NavBar from './components/navbar'
 
 export default function Home() {
+  const[data, setData]=useState('i am data from hook useState')
   return (
-    <div className="container">
-      <Head>
+<div>
+<Head>
+  <title>Code Scramblers</title>
+</Head>
+    <NavBar></NavBar>
+    <Layout>
+
+<p>{data}</p>
+
+
+    </Layout>
+</div>
+)
+}
+
+
+
+
+    {/* <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -203,7 +225,4 @@ export default function Home() {
         * {
           box-sizing: border-box;
         }
-      `}</style>
-    </div>
-  )
-}
+      `}</style> */}

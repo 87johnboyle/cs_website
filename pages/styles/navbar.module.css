@@ -1,0 +1,26 @@
+.navbarPositionBackground{
+    background-color: orange;
+    margin: 0 auto;
+    text-align: center;
+    height: 3rem;
+   
+}
+.navLink{
+  font-weight: 900;
+  font-size: 2rem;
+  padding: 5px 20px;
+  animation-name: example;
+  animation-duration: 1s;
+}
+.navLink:hover{
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+@keyframes example {
+    0%   {opacity:0;}
+    25%  {opacity:0.4;}
+    50%  {opacity:0.6;}
+    75%  {opacity:0.8;}
+    100% {opacity:1;}
+  }
