@@ -11,7 +11,40 @@ export default function Home() {
 <div>
 {/* Everything will be sitting inside Layout as this will bring top navbar and footer later on.  */}
 <Layout> 
+  <div className={styles.colorOverlay}>
+  <div className={styles.mainPicture}>
+    
+  </div>
+  </div>
+
+
+
+  <h2 className={styles.headingAfterMainPicture}>Whatever Heading</h2>
+  
+  <div className={styles.boxContainer}>
+
+   
+      <div className={styles.box}>
+        <h3>Ladida</h3>
+        <p>some text some text some text some text some text some text some text </p>
+      </div>
+      <div className={styles.box}>
+      <h3>Ladida</h3>
+      <p>some text some text some text some text some text some text some text </p>
+      </div>
+      <div className={styles.box}>
+      <h3>Ladida</h3>
+      <p>some text some text some text some text some text some text some text </p>
+      </div>
+      <div className={styles.box}>
+      <h3>Ladida</h3>
+      <p>some text some text some text some text some text some text some text </p>
+      </div>
+
+  </div>
+
 <div className={styles.indexCarousel}>
+  
 <Carousel >
   <Carousel.Item>
     <img
