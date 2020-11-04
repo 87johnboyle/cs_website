@@ -15,9 +15,15 @@ const cors = Cors({
     allowMethods: ["POST", "OPTIONS"]
 })
 
-//Schema for our api
+//Schema for our api, queries and mutations to create data
 
 const schema = gql`
+
+type Mutation {
+    createProject(name:String!): Project
+    completeProject(id: ID!): Project
+}
+
   type Query {
     projects: [Project]!
     project(id: ID!): Project
@@ -46,7 +52,16 @@ const resolvers = {
         .orderBy("id")
         .first()
         }
-    }
+    },
+
+    Mutation: {
+        createProject: async (_, { name}, _c) => {
+          return (await db("projects").insert({ name}).returning("*"))[0]
+        },
+        completeProject: async (_, { id }, _c) => {
+          return (await db("projects").select("*").where({ id }).returning("*"))[0];
+        }
+      }
   }
 
   //set up of server

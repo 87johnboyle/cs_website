@@ -1,57 +1,42 @@
 import Link from 'next/link';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import NavBar from './navbar';
 import Layout from './layout';
 import styles from '../styles/projects.module.css';
-import firebase from 'firebase'
+import { useQuery, useMutation } from "@apollo/react-hooks";
+import { gql } from 'apollo-boost';
+
+const GET_PROJECTS = gql`
+  query {
+    projects {
+      id
+      name
+    }
+  }
+`
 
 export default function Projects() {
   
-    return (
-             <Layout>
-<div className={styles.tableContainer}>
-<table class="table table-hover table-dark">
-  <thead>
-    <tr>
-        
-      <th scope="col">#</th>
-      <th scope="col">Project Name</th>
-      <th scope="col">Framework Used</th>
-      <th scope="col">Work Needed</th>
-      <th scope="col">Contributors</th>
+      const { loading, error, data, refetch } = useQuery(GET_PROJECTS);
 
-    </tr>
-  </thead>
-  <tbody>
-  
-    <tr> 
-    <th scope="row">1</th>
-  
-      <td>Bitcoin Price Checker</td>
-      <td>Vue, SpringBoot</td>
-      <td>BackEnd,Api Fetches</td>
-      <td>2</td>
-     
-   
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Hiking Trails</td>
-      <td>React, MongoDB</td>
-      <td>GoogleMaps, styles CSS</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      {/* <td colspan="2">Larry the Bird</td> */}
-      <td>Weather App</td>
-      <td>React-Native</td>
-      <td>API Fetches, Styling, Components Building</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>     
-            </Layout>
+      if(loading) return <p>Loading...</p>
+      if(error) return <p>ERROR</p>
+    
+      return (
+        <div>
+          <Layout>
+          <h1>Current Projects</h1>
+    
+          {
+            data.projects.map((project) => (
+              <div key={project.id}>
+                {project.name}
+              </div>
+            ))
+          }
+    
+        </Layout>
+        </div>
         
-    )}
+      )
+    }

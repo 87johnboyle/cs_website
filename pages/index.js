@@ -1,13 +1,12 @@
-import Head from 'next/head'
-import {useEffect, useState} from 'react';
-import Link from 'next/link';
+import React, {useEffect, useState} from 'react';
 import Layout from './components/layout'
-import NavBar from './components/navbar'
 import { Carousel } from 'react-bootstrap'
 import styles from './styles/index.module.css'
+
 export default function Home() {
   const[data, setData]=useState('i am data from hook useState')
   return (
+    
 <div>
 {/* Everything will be sitting inside Layout as this will bring top navbar and footer later on.  */}
 <Layout> 
