@@ -9,7 +9,7 @@ body {
 
 
 
-  background-color: darkslategrey;
+  background-color: lightgrey;
 }
 
 * {
@@ -28,4 +28,7 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+form{
+  padding:50px
 }
