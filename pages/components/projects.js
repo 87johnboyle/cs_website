@@ -1,12 +1,34 @@
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
-import NavBar from './navbar'
-import Layout from './layout'
-import styles from '../styles/projects.module.css'
+import NavBar from './navbar';
+import Layout from './layout';
+import styles from '../styles/projects.module.css';
+import firebase from 'firebase'
 
 export default function Projects() {
+  
+  var firebaseConfig = {
+    apiKey: "AIzaSyCGXPc1fmv8Cv9-EeJJ2PFPXNT0TYCoDRo",
+    authDomain: "cs-website-43d4f.firebaseapp.com",
+    databaseURL: "https://cs-website-43d4f.firebaseio.com",
+    projectId: "cs-website-43d4f",
+    storageBucket: "cs-website-43d4f.appspot.com",
+    messagingSenderId: "320586456534",
+    appId: "1:320586456534:web:fab9fe07d7b80f21f01877",
+    measurementId: "G-VS5LS9KCGE"
+  };
+
+if (typeof window !== 'undefined' && !firebase.apps.length) {
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
+  const projectsRef = db.collection('projects');
+  const snapshot = projectsRef.get();
+  snapshot.forEach(doc => {
+    console.log(doc.id, '=>', doc.data())
+    
+  });}
+
     return (
-        <div>
              <Layout>
 <div className={styles.tableContainer}>
 <table class="table table-hover table-dark">
@@ -50,12 +72,7 @@ export default function Projects() {
     </tr>
   </tbody>
 </table>
-</div>
-
-          
-          
+</div>     
             </Layout>
-        </div>
         
-    )
-}
+    )}

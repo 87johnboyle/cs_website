@@ -4,14 +4,7 @@ export default function Footer (){
 
     return (
         <div className={styles.footerMain}>
-            <div className={styles.sitemap}>
-            <label>Site Map</label>
-            <hr/>
-           <ul>
-               <li>Home</li>
-               <li>Projects</li>
-           </ul>
-           </div>
+            <p>Footer</p>
         </div>
     )
 }
