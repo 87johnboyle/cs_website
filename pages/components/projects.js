@@ -1,6 +1,4 @@
-import Link from 'next/link';
 import React, {useEffect, useState} from 'react';
-import NavBar from './navbar';
 import Layout from './layout';
 import styles from '../styles/projects.module.css';
 import { useQuery, useMutation } from "@apollo/react-hooks";
