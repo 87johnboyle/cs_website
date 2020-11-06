@@ -17,13 +17,22 @@ mutation CreateProject($name: String!, $description: String!, $frameworks: Strin
 `
 export default function addProject() {
  
-  const [name, description, frameworks, namedLead, channelName, setProject] = useState("");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [frameworks, setFrameworks] = useState("");
+  const [namedLead, setNamedLead] = useState("");
+  const [channelName, setChannelName] = useState("");
+
   const [createProject] = useMutation(CREATE_PROJECT);
 
   const saveProject = async (e) => {
     e.preventDefault();
-    await createProject({variables: { name: name, description: description, frameworks: frameworks, namedLead: namedLead, channelName: channelName }});
-    setProject("")
+    await createProject({variables: { name: name, description: description, frameworks, frameworks, namedLead, namedLead, channelName, channelName}});
+    setName("")
+    setDescription("")
+    setFrameworks("")
+    setNamedLead("")
+    setChannelName("")
   }
 
 return (
@@ -36,23 +45,23 @@ return (
       <form onSubmit={saveProject}>
         <label>
           Project Name
-          <input onChange={e => setProject(e.target.value)} value={name} />
+          <input onChange={e => setName(e.target.value)} value={name} />
         </label>
         <label>
           Project Description
-          <input onChange={e => setProject(e.target.value)} value={description} />
+          <input onChange={e => setDescription(e.target.value)} value={description} />
         </label>
         <label>
           Frameworks Used (seperated by comma)
-          <input onChange={e => setProject(e.target.value)} value={frameworks} />
+          <input onChange={e => setFrameworks(e.target.value)} value={frameworks} />
         </label>
         <label>
-          namedLead
-          <input onChange={e => setProject(e.target.value)} value={namedLead} />
+          Name of Lead Dev
+          <input onChange={e => setNamedLead(e.target.value)} value={namedLead} />
         </label>
         <label>
           Slack Channel Name
-          <input onChange={e => setProject(e.target.value)} value={channelName} />
+          <input onChange={e => setChannelName(e.target.value)} value={channelName} />
         </label>
         <button type="submit">Save</button>
       </form>

@@ -3,7 +3,7 @@ module.exports = {
       client: "postgresql",
       connection: "postgres://postgres@localhost:5432/projects",
       migrations: {
-        tableName: "projects"
+        tableName: "knex_migrations"
       }
     },
   };

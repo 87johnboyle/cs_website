@@ -7,7 +7,6 @@ exports.up = function(knex) {
       table.string("frameworks", 255);
       table.string("namedLead", 255);
       table.string("channelName", 255);
-      table.boolean("active", true);
     });
   };
   

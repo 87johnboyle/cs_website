@@ -13,7 +13,6 @@ const GET_PROJECTS = gql`
       frameworks
       namedLead
       channelName
-      active
     }
   }
 `
@@ -22,24 +21,45 @@ export default function Projects() {
   
       const { loading, error, data, refetch } = useQuery(GET_PROJECTS);
 
+      const renderHeader = () => {
+      let headerElement = ['id', 'name', 'description', 'frameworks', 'Named Lead', 'Channel Name']
+
+        return headerElement.map((key, index) => {
+            return <th key={index}>{key.toUpperCase()}</th>
+        })
+    }
+
+    const renderBody = () => {
+      return data.projects && data.projects.map(({ id, name, description, frameworks, namedLead, channelName }) => {
+          return (
+              <tr key={id}>
+                  <td>{id}</td>
+                  <td>{name}</td>
+                  <td>{description}</td>
+                  <td>{frameworks}</td>
+                  <td>{namedLead}</td>
+                  <td>{channelName}</td>
+              </tr>
+          )
+      })
+  }
+
       if(loading) return <p>Loading...</p>
       if(error) return <p>ERROR</p>
     
       return (
-        <div>
           <Layout>
           <h1>Current Projects</h1>
     
-          {
-            data.projects.map((project) => (
-              <div key={project.id}>
-                {project.name}
-              </div>
-            ))
-          }
+          <table id='projects'>
+                <thead>
+                    <tr>{renderHeader()}</tr>
+                </thead>
+                <tbody>
+                    {renderBody()}
+                </tbody>
+            </table>
     
         </Layout>
-        </div>
-        
       )
     }
