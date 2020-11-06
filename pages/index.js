@@ -5,6 +5,8 @@ import Layout from './components/layout'
 import NavBar from './components/navbar'
 import { Carousel } from 'react-bootstrap'
 import styles from './styles/index.module.css'
+import Footer from './components/footer'
+
 export default function Home() {
   const[data, setData]=useState('i am data from hook useState')
   return (
@@ -13,30 +15,29 @@ export default function Home() {
 <Layout> 
   <div className={styles.colorOverlay}>
   <div className={styles.mainPicture}>
-    
+    <h3 className={styles.headerMainDiv}>whatever we want</h3> 
   </div>
   </div>
 
 
 
   <h2 className={styles.headingAfterMainPicture}>Whatever Heading</h2>
-  
-  <div className={styles.boxContainer}>
 
-   
-      <div className={styles.box}>
+  <div className="container">
+  
+      <div className="d-flex p-2 w-25 p-3 d-inline p-2 bg-dark text-white" >
         <h3>Ladida</h3>
         <p>some text some text some text some text some text some text some text </p>
       </div>
-      <div className={styles.box}>
+      <div className="d-flex p-2 w-25 p-3 d-inline p-2 bg-dark text-white">
       <h3>Ladida</h3>
       <p>some text some text some text some text some text some text some text </p>
       </div>
-      <div className={styles.box}>
+      <div className="d-flex p-2 w-25 p-3 d-inline p-2 bg-dark text-white">
       <h3>Ladida</h3>
       <p>some text some text some text some text some text some text some text </p>
       </div>
-      <div className={styles.box}>
+      <div className="d-flex p-2 w-25 p-3 d-inline p-2 bg-dark text-white">
       <h3>Ladida</h3>
       <p>some text some text some text some text some text some text some text </p>
       </div>
@@ -45,7 +46,7 @@ export default function Home() {
 
 <div className={styles.indexCarousel}>
   
-<Carousel >
+{/* <Carousel >
   <Carousel.Item>
     <img
       className="d-block w-100"
@@ -87,7 +88,7 @@ export default function Home() {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </Carousel.Caption>
   </Carousel.Item>
-</Carousel>
+</Carousel> */}
 </div>
 
 </Layout>

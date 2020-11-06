@@ -1,14 +1,15 @@
-/* .footerMain{
-    background-color: lightslategray;
-    margin-bottom:0px;
+.footerMain{
+     background-color: rgb(95, 94, 94);
+    /* margin-bottom:0px;
     position: absolute;
     bottom: 0;
-    width: 100%;
-    height: 10rem;   
-}
+    width: 100%;  */
+    height: 10rem;  
+} 
 
 .sitemap{
     max-width: 200px;
     text-align: center;
     text-decoration: none;
-} */
+} 
+

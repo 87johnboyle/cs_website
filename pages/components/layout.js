@@ -16,10 +16,13 @@ export default function Layout({ children }) {
     <NavBar />
 
     {/*  this is what the page is, every component have this one incorporated inside */}
+    <div className={styles.contentDiv}>
     {children}
+    </div>
+    
 
     {/* bottom of the page */}
-    <Footer fixed="bottom"/>
+    <Footer className={styles.footerClass}/>
   </div>
     )
 }

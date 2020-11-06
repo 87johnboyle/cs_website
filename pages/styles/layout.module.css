@@ -11,9 +11,22 @@
     
 */
     border-radius: 1rem;
-    animation-name: example;
-    animation-duration: 1s;
+    /* animation-name: example;
+    animation-duration: 1s; */
   } 
+
+  .footerClass{
+    position:absolute;
+    margin-bottom: 0px;
+   
+  }
+
+.contentDiv{
+  min-height: 80vh;
+}
+
+
+
 
   @keyframes example {
     0%   {opacity:0;}

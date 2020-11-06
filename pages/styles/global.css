@@ -26,3 +26,8 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/* this will hide lightning thing form website bottom right */
+#__next-prerender-indicator {
+  display: none;
+}
