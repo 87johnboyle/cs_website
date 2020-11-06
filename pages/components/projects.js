@@ -9,6 +9,11 @@ const GET_PROJECTS = gql`
     projects {
       id
       name
+      description
+      frameworks
+      namedLead
+      channelName
+      active
     }
   }
 `

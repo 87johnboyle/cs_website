@@ -20,7 +20,7 @@ const cors = Cors({
 const schema = gql`
 
 type Mutation {
-    createProject(name:String!): Project
+    createProject(name:String!, description:String!, frameworks:String!, namedLead:String!, channelName:String!, active: Boolean!): Project
     completeProject(id: ID!): Project
 }
 
@@ -32,6 +32,11 @@ type Mutation {
   type Project {
       id: ID!
       name: String!
+      description: String!
+      frameworks: String!
+      namedLead: String!
+      channelName: String!
+      active: Boolean!
   }
 `;
 
@@ -55,8 +60,8 @@ const resolvers = {
     },
 
     Mutation: {
-        createProject: async (_, { name}, _c) => {
-          return (await db("projects").insert({ name}).returning("*"))[0]
+        createProject: async (_, { name, description, frameworks, namedLead, channelName, active}, _c) => {
+          return (await db("projects").insert({name, description, frameworks, namedLead, channelName, active}).returning("*"))[0]
         },
         completeProject: async (_, { id }, _c) => {
           return (await db("projects").select("*").where({ id }).returning("*"))[0];
