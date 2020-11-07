@@ -5,7 +5,13 @@ import styles from './styles/index.module.css'
 import Footer from './components/footer'
 
 export default function Home() {
+
+
   const[data, setData]=useState('i am data from hook useState')
+  
+  
+  
+  
   return (
     
 <div>
@@ -21,21 +27,21 @@ export default function Home() {
 
   <h2 className={styles.headingAfterMainPicture}>Whatever Heading</h2>
 
-  <div className="container">
+  <div className="container-sm">
   
-      <div className="d-flex p-2 w-25 p-3 d-inline p-2 bg-dark text-white" >
+      <div className="d-flex" >
         <h3>Ladida</h3>
         <p>some text some text some text some text some text some text some text </p>
       </div>
-      <div className="d-flex p-2 w-25 p-3 d-inline p-2 bg-dark text-white">
+      <div className="d-flex">
       <h3>Ladida</h3>
       <p>some text some text some text some text some text some text some text </p>
       </div>
-      <div className="d-flex p-2 w-25 p-3 d-inline p-2 bg-dark text-white">
+      <div className="d-flex">
       <h3>Ladida</h3>
       <p>some text some text some text some text some text some text some text </p>
       </div>
-      <div className="d-flex p-2 w-25 p-3 d-inline p-2 bg-dark text-white">
+      <div className="d-flex ">
       <h3>Ladida</h3>
       <p>some text some text some text some text some text some text some text </p>
       </div>

@@ -26,6 +26,7 @@ export default function NavBar({ children }) {
       <li className="nav-item active">
       <Link  href="/"><a className="navbar-brand"> Home</a></Link>
       </li>
+      
       <li className="nav-item">
       <Link  href="/components/projects"><a className="navbar-brand">Projects</a></Link>
       </li>
@@ -33,6 +34,7 @@ export default function NavBar({ children }) {
     </ul>
     <span className="navbar-text">
       Code Scramblers Simply from love to code
+      <button>Login</button>
     </span>
   </div>
 </nav>
