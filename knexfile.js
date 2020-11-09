@@ -1,9 +1,9 @@
 module.exports = {
-    development: {
-      client: "postgresql",
-      connection: "postgres://postgres@localhost:5432/projects",
-      migrations: {
-        tableName: "knex_migrations"
-      }
-    },
-  };
+  client: 'postgresql',
+  connection: {
+    host: 'csweb.ckgrmvkm3v9l.eu-west-2.rds.amazonaws.com',
+    user: 'postgres',
+    password: 'Laudrup1!',
+    charset: 'utf8'
+  }
+}
