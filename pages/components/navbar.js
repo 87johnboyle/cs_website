@@ -19,7 +19,7 @@ export default function NavBar({ children }) {
       <Nav.Link href="/components/projects">Projects</Nav.Link>
       <NavDropdown title="More" id="basic-nav-dropdown">
         <NavDropdown.Item href="/components/whatwedo">What We Do</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Login</NavDropdown.Item>
+        <NavDropdown.Item href="/components/testProjectPage">Test Project Page</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Want to Join?</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item  disabled style={{ pointerEvents: 'none' }} >It's Free To Join!</NavDropdown.Item>

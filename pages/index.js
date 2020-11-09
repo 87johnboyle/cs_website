@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Layout from './components/layout'
-import { Carousel } from 'react-bootstrap'
 import styles from './styles/index.module.css'
-import Footer from './components/footer'
-import {Jumbotron, Container} from 'react-bootstrap'
+import {Jumbotron, Container, Carousel} from 'react-bootstrap'
 
 
 export default function Home() {
