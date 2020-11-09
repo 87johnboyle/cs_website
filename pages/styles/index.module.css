@@ -60,7 +60,7 @@
     text-align: center;
     padding-top: 190px;
     color: darkseagreen; 
-    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    text-shadow: 2px 0 0 white, -1px 0 0 white, 0 2px 0 white, 0 -1px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
 }
 
 .Jumbotron{
@@ -71,6 +71,8 @@
     border-radius: 5px;
     border: 1px solid deepskyblue;
     background-color: lightblue;
+    animation-name: example;
+    animation-duration: 3s;
 }
 
 .boxesContainer{
@@ -80,10 +82,14 @@
     /* justify-content: space-between; */
 }
 
-.boxText{
-   
+.Jumbotron h5{
+   color: blue;
 }
 
+.Jumbotron p{
+    color: grey;
+    /* text-shadow: 2px 0 0 black, -1px 0 0 black, 0 2px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black; */
+}
 
 
 
