@@ -3,6 +3,8 @@ import Layout from './components/layout'
 import { Carousel } from 'react-bootstrap'
 import styles from './styles/index.module.css'
 import Footer from './components/footer'
+import {Jumbotron, Container} from 'react-bootstrap'
+
 
 export default function Home() {
 
@@ -27,7 +29,61 @@ export default function Home() {
 
   <h2 className={styles.headingAfterMainPicture}>Whatever Heading</h2>
 
-  <div className="container-sm">
+
+
+<div className={styles.boxesContainer}>
+  <Jumbotron fluid className={styles.Jumbotron} >
+  <Container>
+    <h5>Fluid jumbotron</h5>
+    <p classNmae={styles.boxText}>
+      This is a modified jumbotron that occupies the entire horizontal space of
+      its parent.
+    </p>
+  </Container>
+</Jumbotron>
+<Jumbotron fluid className={styles.Jumbotron} >
+  <Container>
+    <h5>Fluid jumbotron</h5>
+    <p classNmae={styles.boxText}>
+      This is a modified jumbotron that occupies the entire horizontal space of
+      its parent.
+    </p>
+  </Container>
+</Jumbotron>
+<Jumbotron fluid className={styles.Jumbotron} >
+  <Container>
+    <h5>Fluid jumbotron</h5>
+    <p classNmae={styles.boxText}>
+      This is a modified jumbotron that occupies the entire horizontal space of
+      its parent.
+    </p>
+  </Container>
+</Jumbotron>
+<Jumbotron fluid className={styles.Jumbotron} >
+  <Container>
+    <h5>Fluid jumbotron</h5>
+    <p classNmae={styles.boxText}>
+      This is a modified jumbotron that occupies the entire horizontal space of
+      its parent.
+    </p>
+  </Container>
+</Jumbotron>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {/* <div className="container-sm">
   
       <div className="d-flex" >
         <h3>Ladida</h3>
@@ -46,7 +102,7 @@ export default function Home() {
       <p>some text some text some text some text some text some text some text </p>
       </div>
 
-  </div>
+  </div> */}
 
 <div className={styles.indexCarousel}>
   

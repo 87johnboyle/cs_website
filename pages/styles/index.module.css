@@ -63,6 +63,30 @@
     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 
+.Jumbotron{
+    align-self: center;
+    max-width: 40%;
+    display: inline-block;
+    margin: 5%;
+    border-radius: 5px;
+    border: 1px solid deepskyblue;
+    background-color: lightblue;
+}
+
+.boxesContainer{
+    display: inline-block; 
+    /* margin: 0 auto; */
+    /* align-items: flex-start; */
+    /* justify-content: space-between; */
+}
+
+.boxText{
+   
+}
+
+
+
+
 
 
 @keyframes example {
@@ -72,3 +96,5 @@
     75%  {opacity:0.8;}
     100% {opacity:1;}
   } 
+
+
