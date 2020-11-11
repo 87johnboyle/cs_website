@@ -41,7 +41,6 @@ export const updateProject = /* GraphQL */ `
 `;
 export const addProject = /* GraphQL */ `
   mutation AddProject(
-    $id: ID!
     $name: String
     $description: String
     $frameworks: String
@@ -49,7 +48,6 @@ export const addProject = /* GraphQL */ `
     $namedLead: String
   ) {
     addProject(
-      id: $id
       name: $name
       description: $description
       frameworks: $frameworks
