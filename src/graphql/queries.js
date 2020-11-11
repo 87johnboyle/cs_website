@@ -17,7 +17,7 @@ export const allProject = /* GraphQL */ `
   }
 `;
 export const getProject = /* GraphQL */ `
-  query GetProject($id: ID) {
+  query GetProject($id: String) {
     getProject(id: $id) {
       id
       name

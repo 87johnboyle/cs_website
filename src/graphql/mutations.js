@@ -15,7 +15,7 @@ export const deleteProject = /* GraphQL */ `
 `;
 export const updateProject = /* GraphQL */ `
   mutation UpdateProject(
-    $id: ID!
+    $id: String
     $name: String
     $description: String
     $frameworks: String

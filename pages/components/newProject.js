@@ -6,13 +6,14 @@ import Amplify, { API, graphqlOperation } from 'aws-amplify'
 import { addProject, deleteProject, updateProject } from '../../src/graphql/mutations'
 import { allProject, getProject } from '../../src/graphql/queries'
 import awsExports from "../../src/aws-exports";
+import { v4 as uuidv4 } from 'uuid';
 
 
 export default function newProject() {
 
   Amplify.configure(awsExports);
 
-  const initialState = { name: '', description: '', frameworks: '', namedLead: '', channelName: '' }
+  const initialState = { name: '', description: '', frameworks: '', channelName: '',  namedLead: ''}
   const [formState, setFormState] = useState(initialState)
   const [projects, setProjects] = useState([])
 
@@ -26,6 +27,7 @@ export default function newProject() {
       const project = { ...formState }
       setProjects([...projects, project])
       setFormState(initialState)
+      console.log(project)
       await API.graphql(graphqlOperation(addProject, {input: project}))
     } catch (err) {
       console.log('error creating project:', err)
@@ -38,6 +40,7 @@ return (
 <Layout>
 <div>
 <h2>Add Project</h2>
+
       <input
         onChange={event => setInput('name', event.target.value)}
         value={formState.name}
@@ -53,15 +56,17 @@ return (
         value={formState.frameworks}
         placeholder="Frameworks"
       />
+
+<input
+        onChange={event => setInput('channelName', event.target.value)}
+        value={formState.channelName}
+        placeholder="Channel Name"
+      />
+
       <input
         onChange={event => setInput('namedLead', event.target.value)}
         value={formState.namedLead}
         placeholder="Named Lead"
-      />
-      <input
-        onChange={event => setInput('channelName', event.target.value)}
-        value={formState.channelName}
-        placeholder="Channel Name"
       />
       <button onClick={createProject}>Create Project</button>
 </div></Layout>
