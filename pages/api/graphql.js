@@ -6,7 +6,7 @@ import knex from "knex";
 
 const db = knex({
     client: "pg",
-    connection: "postgres://postgres@localhost:5432/projects"
+    connection: "csweb.ckgrmvkm3v9l.eu-west-2.rds.amazonaws.com"
 })
 
 // Let micro-corse clean up any issues with cors
