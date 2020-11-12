@@ -26,19 +26,42 @@ export default function Projects() {
     } catch (err) { console.log('error fetching projects') }
   }
 
+  const renderHeader = () => {
+    let headerElement = ['name', 'description', 'frameworks', 'Named Lead', 'Channel Name']
+
+      return headerElement.map((key, index) => {
+          return <th key={index}>{key.toUpperCase()}</th>
+      })
+  }
+
+  const renderBody = () => {
+    return projects && projects.map(({ id, name, description, frameworks, namedLead, channelName }) => {
+        return (
+            <tr key={id}>
+                <td>{name}</td>
+                <td>{description}</td>
+                <td>{frameworks}</td>
+                <td>{namedLead}</td>
+                <td>{channelName}</td>
+            </tr>
+        )
+    })
+}
+
 return(
   <Layout>
-    <div>
-    {
-        projects.map((project, index) => (
-          <div key={project.id ? project.id : index}>
-            <p>{project.name}</p>
-            <p>{project.description}</p>
-          </div>
-        ))
-      }
-    </div>
-  </Layout>
+          <h1>Current Projects</h1>
+    
+          <table id='projects'>
+                <thead>
+                    <tr>{renderHeader()}</tr>
+                </thead>
+                <tbody>
+                    {renderBody()}
+                </tbody>
+            </table>
+    
+        </Layout>
 )
 
 }
