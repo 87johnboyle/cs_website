@@ -40,20 +40,8 @@ export const updateProject = /* GraphQL */ `
   }
 `;
 export const addProject = /* GraphQL */ `
-  mutation AddProject(
-    $name: String
-    $description: String
-    $frameworks: String
-    $channelName: String
-    $namedLead: String
-  ) {
-    addProject(
-      name: $name
-      description: $description
-      frameworks: $frameworks
-      channelName: $channelName
-      namedLead: $namedLead
-    ) {
+  mutation AddProject($input: createProjectInput) {
+    addProject(input: $input) {
       id
       name
       description

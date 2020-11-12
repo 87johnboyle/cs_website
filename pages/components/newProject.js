@@ -28,7 +28,7 @@ export default function newProject() {
       setProjects([...projects, project])
       setFormState(initialState)
       console.log(project)
-      await API.graphql(graphqlOperation(addProject, {input: project}))
+      await API.graphql(graphqlOperation(addProject, {input: project})).then(data => console.log(data))
     } catch (err) {
       console.log('error creating project:', err)
     }
@@ -57,7 +57,7 @@ return (
         placeholder="Frameworks"
       />
 
-<input
+      <input
         onChange={event => setInput('channelName', event.target.value)}
         value={formState.channelName}
         placeholder="Channel Name"
