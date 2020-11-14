@@ -16,13 +16,16 @@
   } 
 
   .footerClass{
+   
     position:absolute;
     margin-bottom: 0px;
    
   }
 
 .contentDiv{
+  margin-top:11px;
   min-height: 80vh;
+
 }
 
 

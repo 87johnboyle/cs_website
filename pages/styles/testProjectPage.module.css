@@ -1,0 +1,15 @@
+.card{
+   width: 18rem;
+   margin: 20px;
+    display: inline-flex;
+}
+
+.imgDiv{
+    width:323px;
+    height: 200px;
+    background-color: grey;
+}
+.divContainer{
+    display: inline-block;
+    
+}
