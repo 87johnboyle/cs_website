@@ -8,6 +8,10 @@ import { allProject, getProject } from '../../src/graphql/queries'
 import awsExports from "../../src/aws-exports";
 import { v4 as uuidv4 } from 'uuid';
 
+{/* I hope you dont mind I've added these*/}
+import {Form,Button} from 'react-bootstrap'
+import styles from '../styles/newProject.module.css'
+{/* end*/}
 
 export default function newProject() {
 
@@ -41,7 +45,7 @@ return (
 <div>
 <h2>Add Project</h2>
 
-      <input
+      {/* <input
         onChange={event => setInput('name', event.target.value)}
         value={formState.name}
         placeholder="Name"
@@ -69,7 +73,68 @@ return (
         placeholder="Named Lead"
       />
       <button onClick={createProject}>Create Project</button>
-</div></Layout>
+*/}
+
+{/* I hope you dont mind I've changes the form look*/}
+<Form className={styles.addProjectForm}>
+<Form.Group controlId="formBasicEmail">
+  <Form.Label>Name</Form.Label>
+  <Form.Control  // type="email" 
+  
+  placeholder="Name"/>
+  <Form.Text className="text-muted">
+   Name of the project.
+  </Form.Text>
+</Form.Group>
+
+<Form.Group controlId="formBasicPassword">
+  <Form.Label>Description</Form.Label>
+  <Form.Control // type="password" 
+  
+   placeholder="Description"/>
+   <Form.Text className="text-muted">
+   Write short decription of this nwe project here.
+  </Form.Text>
+</Form.Group>
+
+<Form.Group controlId="formBasicPassword">
+  <Form.Label>Frameworks</Form.Label>
+  <Form.Control // type="password" 
+  
+   placeholder="Frameworks" />
+   <Form.Text className="text-muted">
+   List Frameworks,Software, extensions in here. separated by coma (,)
+  </Form.Text>
+</Form.Group>
+
+<Form.Group controlId="formBasicPassword">
+  <Form.Label>Channel Name</Form.Label>
+  <Form.Control // type="password" 
+   
+   placeholder="Channel Name"/>
+</Form.Group>
+
+<Form.Group controlId="formBasicPassword">
+  <Form.Label>Project Manager</Form.Label>
+  <Form.Control // type="password" 
+  
+   placeholder="Named Lead" />
+</Form.Group>
+
+
+
+<Form.Group controlId="formBasicCheckbox">
+  <Form.Check type="checkbox" label="Check If your not a Mr.Robot" />
+</Form.Group>
+<Button variant="primary" type="submit">
+Create Project
+</Button>
+</Form>
+
+{/* end */}
+</div> 
+
+</Layout>
 
 )
 
